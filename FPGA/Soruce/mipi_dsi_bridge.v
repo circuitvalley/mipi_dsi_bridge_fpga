@@ -27,7 +27,6 @@ module mipi_dsi_bridge(nsys_reset, clk,
 				reg_3v0_en, 
 				lcd_rst, 
 				bl_en, 
-				spi_miso_o, 
 				spi_mosi_i, 
 				spi_csn_i, 
 				spi_clk_i, 
@@ -37,7 +36,6 @@ output reg reg_1v8_en;
 output reg reg_3v0_en;
 output reg lcd_rst;
 output reg bl_en;
-output spi_miso_o;
 output hs_clock_o;
 output hs_data_o;
 output wire buf_clkout_lp_n_o ;
