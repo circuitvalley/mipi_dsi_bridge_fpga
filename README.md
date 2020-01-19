@@ -1,4 +1,4 @@
-# mipi_dsi_bridge_fpga
+# MIPI DSI Bridge 
 Source code of MIPI DSI Bridge Published on https://www.circuitvalley.com
 
 Copyright:  Gaurav Singh
