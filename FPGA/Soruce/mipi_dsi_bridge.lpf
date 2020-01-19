@@ -26,7 +26,6 @@ LOCATE COMP "reg_3v0_en" SITE "B12" ;
 LOCATE COMP "bl_en" SITE "E11" ;
 IOBUF PORT "lcd_rst" OPENDRAIN=ON IO_TYPE=LVCMOS25 DRIVE=8 ;
 LOCATE COMP "spi_mosi_i" SITE "R8" ;
-LOCATE COMP "spi_miso_o" SITE "C1" ;
 LOCATE COMP "spi_clk_i" SITE "M6" ;
 LOCATE COMP "spi_csn_i" SITE "T7" ;
 LOCATE COMP "lcd_test_i" SITE "N2" ;
