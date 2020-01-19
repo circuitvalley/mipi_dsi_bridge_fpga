@@ -2,6 +2,7 @@
 Source code of MIPI DSI Bridge Published on https://www.circuitvalley.com
 
 /*******************************************************************************
+
     Copyright:  Gaurav Singh
     website: www.circuitvalley.com 
     Created on January 12, 2020
@@ -26,6 +27,6 @@ Source code of MIPI DSI Bridge Published on https://www.circuitvalley.com
 
 	.https://www.circuitvalley.com/2020/01/spi-mipi-bridge-fpga-verilog-hdl-ipod-nano-nano-lcd-iphone-mipi-lcd.html
 	
-	[![Watch the video](https://raw.githubusercontent.com/circuitvalley/mipi_dsi_bridge_fpga/master/Hardware/Images/mipi_fpga_ipod_lcd_nano_6_ipone_verilog_spi_mipi_bridge_driver_vdhl_FPGA%20(1)2.gif)](https://www.circuitvalley.com/2020/01/spi-mipi-bridge-fpga-verilog-hdl-ipod-nano-nano-lcd-iphone-mipi-lcd.html)
-	
+	![alt text](https://raw.githubusercontent.com/circuitvalley/mipi_dsi_bridge_fpga/master/Hardware/Images/mipi_fpga_ipod_lcd_nano_6_ipone_verilog_spi_mipi_bridge_driver_vdhl_FPGA%20(1)2.gif)
+
 *******************************************************************************/
