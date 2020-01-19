@@ -46,9 +46,14 @@ wire reset_g;
 GSR GSR_INST (.GSR (reset_g));
 PUR PUR_INST (.PUR (reset_g));
 
-mipi_dsi_bridge mipi_dsi_bridge_ins(nsys_reset, clock, hs_clock_o, hs_data_o , buf_clkout_lp_n_o, buf_clkout_lp_p_o, buf_dout_lp_n_o, 
-				buf_dout_lp_p_o, byte_clock_o, tx_ready_o, write_to_fifo,read_from_fifo_w, 
-				reg_1v8_en, reg_3v0_en, lcd_rst, bl_en, spi_miso_o, spi_data, spi_cs, spi_clock, 1'b1);
+mipi_dsi_bridge mipi_dsi_bridge_ins(nsys_reset, 
+					clock, 
+					hs_clock_o, hs_data_o , 
+					buf_clkout_lp_n_o, buf_clkout_lp_p_o, 
+					buf_dout_lp_n_o, buf_dout_lp_p_o,   
+					reg_1v8_en, reg_3v0_en, 
+					lcd_rst, bl_en, 
+					spi_data, spi_cs, spi_clock, 1'b1);
 
 initial begin
 	clock = 1'b0;
