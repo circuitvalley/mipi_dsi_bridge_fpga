@@ -1,0 +1,31 @@
+#ifndef __TEMPLATE_RTCC_REGISTERS_H__
+#define __TEMPLATE_RTCC_REGISTERS_H__
+
+typedef struct rtcc_register {
+	__RTCCONbits_t RTCCON;
+	uint32_t RTCCONCLR;
+	uint32_t RTCCONSET;
+	uint32_t RTCCONINV;
+	__RTCALRMbits_t RTCALRM;
+	uint32_t RTCALRMCLR;
+	uint32_t RTCALRMSET;
+	uint32_t RTCALRMINV;
+	__RTCTIMEbits_t RTCTIME;
+	uint32_t RTCTIMECLR;
+	uint32_t RTCTIMESET;
+	uint32_t RTCTIMEINV;
+	__RTCDATEbits_t RTCDATE;
+	uint32_t RTCDATECLR;
+	uint32_t RTCDATESET;
+	uint32_t RTCDATEINV;
+	__ALRMTIMEbits_t ALRMTIME;
+	uint32_t ALRMTIMECLR;
+	uint32_t ALRMTIMESET;
+	uint32_t ALRMTIMEINV;
+	__ALRMDATEbits_t ALRMDATE;
+	uint32_t ALRMDATECLR;
+	uint32_t ALRMDATESET;
+	uint32_t ALRMDATEINV;
+} rtcc_register_t;
+
+#endif /* __TEMPLATE_RTCC_REGISTERS_H__ */
