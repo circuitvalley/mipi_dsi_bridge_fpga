@@ -130,7 +130,7 @@ task send_frame;
 		send_line(8'h3F, dummy);
 		for ( i= 9'h0; i<239; i = i + 1'h1)begin
 			#1000
-			send_line_short(8'h6B, dummy);
+			send_line(8'h6B, dummy);
 		end
 			
 
