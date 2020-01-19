@@ -1,0 +1,40 @@
+[Device]
+Family=machxo3lf
+PartType=LCMXO3LF-6900C
+PartName=LCMXO3LF-6900C-5BG256C
+SpeedGrade=5
+Package=CABGA256
+OperatingCondition=COM
+Status=S
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=LPM
+CoreStatus=Demo
+CoreName=Distributed_ROM
+CoreRevision=2.8
+ModuleName=ROM
+SourceFormat=Verilog HDL
+ParameterFileVersion=1.0
+Date=01/14/2020
+Time=20:17:42
+
+[Parameters]
+Verilog=1
+VHDL=0
+EDIF=1
+Destination=Synplicity
+Expression=BusA(0 to 7)
+Order=Big Endian [MSB:LSB]
+IO=0
+Addresses=768
+Data=8
+LUT=1
+MemFile=c:/users/gaurav/documents/fpga/lattice/counter/rom.mem
+MemFormat=orca
+
+[FilesGenerated]
+c:/users/gaurav/documents/fpga/lattice/counter/rom.mem=mem
+
+[Command]
+cmd_line= -w -n ROM -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -dram -type romblk -addr_width 10 -num_words 768 -data_width 8 -outdata REGISTERED -memfile c:/users/gaurav/documents/fpga/lattice/counter/rom.mem -memformat orca

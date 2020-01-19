@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="mipi_dsi_bridge" device="LCMXO3LF-6900C-5BG256C" default_implementation="mipi_dsi_bridge">
+    <Options/>
+    <Implementation title="mipi_dsi_bridge" dir="mipi_dsi_bridge" description="mipi_dsi_bridge" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="mipi_dsi_bridge" top="mipi_dsi_bridge"/>
+        <Source name="PLL.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="DDR_MIPI.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="FIFo.ipx" type="IPX_Module" type_short="IPX" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="FIFo.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="PLL.ipx" type="IPX_Module" type_short="IPX" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="DDR_MIPI.ipx" type="IPX_Module" type_short="IPX" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="ROM.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="ROM.ipx" type="IPX_Module" type_short="IPX" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="send_mipi_frame.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="spi_slave.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="tb_send_frame.v" type="Verilog" type_short="Verilog" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="tb_spi_bridge.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
+            <Options/>
+        </Source>
+        <Source name="mipi_dsi_bridge.v" type="Verilog" type_short="Verilog">
+            <Options top_module="mipi_dsi_bridge"/>
+        </Source>
+        <Source name="mipi_dsi_bridge.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+        <Source name="mipi_dsi_bridge/mipi_dsi_bridge.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="mipi_dsi_bridge1.sty"/>
+</BaliProject>

@@ -1,0 +1,56 @@
+[Device]
+Family=machxo3lf
+PartType=LCMXO3LF-6900C
+PartName=LCMXO3LF-6900C-5BG256C
+SpeedGrade=5
+Package=CABGA256
+OperatingCondition=COM
+Status=S
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=LPM
+CoreStatus=Demo
+CoreName=DDR_GENERIC
+CoreRevision=6.0
+ModuleName=DDR
+SourceFormat=Verilog HDL
+ParameterFileVersion=1.0
+Date=09/08/2019
+Time=10:33:27
+
+[Parameters]
+Verilog=1
+VHDL=0
+EDIF=1
+Destination=Synplicity
+Expression=BusA(0 to 7)
+Order=Big Endian [MSB:LSB]
+IO=0
+mode=
+trioddr=0
+highspeed=0
+io_type=
+num_int=
+width=
+freq_in=
+bandwidth=
+aligned=
+pre-configuration=DISABLED
+mode2=Transmit
+trioddr2=0
+highspeed2=0
+io_type2=LVDS25
+freq_in2=96
+gear=4x
+aligned2=Edge-to-Edge
+num_int2=2
+width2=1
+Interface=GDDRX4_TX.ECLK.Aligned
+Delay=Bypass
+DelVal=
+UsePll=
+GenPll=0
+
+[Command]
+cmd_line= -w -n DDR -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type iol -mode out -io_type LVDS25 -width 1 -freq_in 96 -gear 4 -clk eclk -aligned -del -1

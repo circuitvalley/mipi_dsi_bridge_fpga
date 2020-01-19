@@ -1,0 +1,53 @@
+[Device]
+Family=machxo3lf
+PartType=LCMXO3LF-6900C
+PartName=LCMXO3LF-6900C-5BG256C
+SpeedGrade=5
+Package=CABGA256
+OperatingCondition=COM
+Status=S
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=LPM
+CoreStatus=Demo
+CoreName=FIFO_DC
+CoreRevision=5.8
+ModuleName=FIFo
+SourceFormat=Verilog HDL
+ParameterFileVersion=1.0
+Date=01/16/2020
+Time=00:09:17
+
+[Parameters]
+Verilog=1
+VHDL=0
+EDIF=1
+Destination=Synplicity
+Expression=None
+Order=Big Endian [MSB:LSB]
+IO=0
+FIFOImp=EBR Only
+RDepth=1024
+RWidth=8
+WDepth=1024
+WWidth=8
+regout=0
+CtrlByRdEn=0
+ClockEn=0
+EmpFlg=1
+PeMode=Static - Single Threshold
+PeAssert=10
+PeDeassert=12
+FullFlg=1
+PfMode=Static - Single Threshold
+PfAssert=1000
+PfDeassert=506
+Reset=Async
+Reset1=Async
+RDataCount=0
+WDataCount=0
+EnECC=0
+
+[Command]
+cmd_line= -w -n FIFo -lang verilog -synth lse -bb -arch xo3c00f -type ebfifo -depth 1024 -width 8 -rwidth 8 -no_enable -pe 10 -pf 1000

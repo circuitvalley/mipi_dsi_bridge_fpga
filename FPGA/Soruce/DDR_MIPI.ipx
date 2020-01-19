@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="DDR_MIPI" module="DDR_GENERIC" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2019 09 13 22:33:29.465" version="6.0" type="Module" synthesis="lse" source_format="Verilog">
+  <Package>
+		<File name="DDR_MIPI.lpc" type="lpc" modified="2019 09 13 22:33:27.910"/>
+		<File name="DDR_MIPI.v" type="top_level_verilog" modified="2019 09 13 22:33:27.950"/>
+		<File name="DDR_MIPI_tmpl.v" type="template_verilog" modified="2019 09 13 22:33:27.954"/>
+  </Package>
+</DiamondModule>
