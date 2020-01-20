@@ -246,17 +246,14 @@ void APP_Tasks (void )
                 SYS_INT_SourceEnable(INT_SOURCE_USART_1_ERROR);
                 SYS_INT_SourceEnable(INT_SOURCE_USART_1_TRANSMIT);
                 
-                printf32("Test String..\r\n");
-                printf32("s_u_b %x size %d \n", usb_packet_buffer, sizeof(usb_packet_buffer));
-                printf32("s_p %x size %d\n", packets, sizeof(packets));
-                 for (uint16_t i=0; i < BUFFER_COUNT; i++)
+
+                for (uint16_t i=0; i < BUFFER_COUNT; i++)
                 {
                     
                     packets[i] = (usb_packet_data_t ){.display_packet = (usb_display_paket_t *)(usb_packet_buffer + (USB_READ_SIZE * i)), 
                                                      .available_data_length = 0, 
                                                      .next = &packets[(i+1)%BUFFER_COUNT]}; //mod to get last one point to first
                 }
-                               // printf32("D:%x\n", packet_write->display_packet->data[3]);
 
       
                 appData.state = APP_STATE_WAIT_FOR_CONFIGURATION;
