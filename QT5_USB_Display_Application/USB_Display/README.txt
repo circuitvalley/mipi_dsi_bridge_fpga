@@ -1,6 +1,4 @@
-This is a cross platform project that is similar in functionality as the
-"plug_and_play_example\src\vc++2008_express" project.  However, 
-this version is developed in the Qt 5.x.x development environment (from www.qt.org), 
+This is a cross platform project, this version is developed in the Qt 5.x.x development environment (from www.qt.org), 
 and uses the "libusb v1.0.x" APIs.
 
 The libusb v1.0.x "driver" provides top level libusb API functions for accessing 
