@@ -22,11 +22,10 @@ Verilog for FPGA for implementing MIPI DSI Bridge
 PCB Hardware File 
 LibUSB Controller Firmware code for receiving images from PC and transmitting over SPI to FPGA  Target PIC32MZ2048EFM
 QT5 PC Application for tranmitting images to USB device
-
+## Project Describtion 
 https://www.circuitvalley.com/2020/01/spi-mipi-bridge-fpga-verilog-hdl-ipod-nano-nano-lcd-iphone-mipi-lcd.html
-
 https://www.circuitvalley.com/2020/01/spi-mipi-bridge-fpga-verilog-hdl-ipod-nano-nano-lcd-iphone-mipi-lcd-usb-pic32-usb-hs.html
 
-#Youtube Video 
+## Youtube Video 
 [![Video](https://raw.githubusercontent.com/circuitvalley/mipi_dsi_bridge_fpga/master/Hardware/Images/mipi_fpga_ipod_lcd_nano_6_ipone_verilog_spi_mipi_bridge_driver_vdhl_FPGA%20(7).JPG)](https://www.youtube.com/watch?v=Ob968oMQPxM)
 ![alt text](https://raw.githubusercontent.com/circuitvalley/mipi_dsi_bridge_fpga/master/Hardware/Images/mipi_fpga_ipod_lcd_nano_6_ipone_verilog_spi_mipi_bridge_driver_vdhl_FPGA%20(1)2.gif)
