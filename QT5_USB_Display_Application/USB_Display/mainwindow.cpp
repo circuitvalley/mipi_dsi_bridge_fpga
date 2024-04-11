@@ -30,7 +30,8 @@
 #include <QMainWindow>
 
 #include <QScreen>
-#include <QDesktopWidget>
+#include <QtGlobal>
+
 //Wide scope variables
 QFuture<void> connectionPoller;
 
@@ -60,7 +61,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //Execute PollUSBConnection() in a separate thread, so that
     //it can periodically check for USB attach/detach events in the
     //background, without blocking the user interface of this GUI app.
-    connectionPoller = QtConcurrent::run(usbcomm, &Usbcomm::PollUSBConnection, &threadAbortFlag);
+    connectionPoller = QtConcurrent::run(&Usbcomm::PollUSBConnection, usbcomm, &threadAbortFlag);
 
     connect(usbcomm, SIGNAL(comm_update_connection(bool)), this, SLOT(Update_GUI_Connection(bool)));
 
@@ -79,7 +80,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->statusBar->showMessage(QString("View Size %1x%2").arg(QString::number(ui->graphicsView->width()), QString::number(ui->graphicsView->height())));
 
 
-    const QRect screenGeometry = QApplication::desktop()->geometry();
+    QScreen *screen = QGuiApplication::primaryScreen();
+
+    const QRect screenGeometry = screen->geometry();
 
     ui->capture_width_spinBox->setRange(DISPLAY_WIDTH, screenGeometry.width());
     ui->capture_height_spinBox->setRange(DISPLAY_HEIGHT, screenGeometry.height());
