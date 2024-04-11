@@ -1,0 +1,132 @@
+;---------------------------------------------------------------------------------
+;Note: When the driver package is signed, any modifications to this .inf file will
+;break the signature, and the driver package will need to be re-signed.
+;---------------------------------------------------------------------------------
+; Windows Custom/Vendor Class WinUSB Setup File
+; Copyright (C) 2012 Microchip Technology Inc.
+;---------------------------------------------------------------------------------
+; This .inf file is a modified version of the example INF provided
+; in the Microsoft document:
+; "How to Use WinUSB to Communicate with a USB Device"
+;---------------------------------------------------------------------------------
+
+
+[Version]
+Signature = "$Windows NT$"
+Class = CustomUSBDevices
+ClassGuid= {a503e2d3-a031-49dc-b684-c99085dbfe92}
+Provider = %MFGNAME%
+DriverVer=12/03/2012,1.0.0.7
+CatalogFile=mchpwinusb.cat	;CAT file needed for a signed driver pacakage
+;------------------------------------------------------------------------------
+; ========== Manufacturer/Models sections ===========
+;------------------------------------------------------------------------------
+[Manufacturer]
+%MFGNAME% = MyDevice_WinUSB,NTx86,NTamd64
+
+;------------------------------------------------------------------------------
+;  Vendor and Product ID Definitions
+;------------------------------------------------------------------------------
+; When developing your custom USB device, the VID and PID used in the PC side
+; application program and the firmware on the microcontroller must match.
+; Modify the below lines to use your VID and PID.  Use the format as shown below.
+; Note: One INF file can be used for multiple devices with different VID and PIDs.
+; For each supported device, append ",USB\VID_xxxx&PID_yyyy" to the end of the line.
+; There is a maximum number of devices that can be supported per line however.
+; If you append a large number of VID/PIDs to the end of the line, and get a:
+; "The data area passed to a system call is too small." error when trying to install
+; the INF, try removing some of the VIDs/PIDs.
+;------------------------------------------------------------------------------
+[MyDevice_WinUSB.NTx86]
+%DESCRIPTION% =USB_Install, USB\VID_04d8&PID_0053,USB\VID_04d8&PID_0052,USB\VID_04d8&PID_020A,USB\VID_04d8&PID_020B,USB\VID_04d8&PID_020F,USB\VID_04d8&PID_005F&MI_01,USB\VID_04d8&PID_020C&MI_01,USB\VID_04d8&PID_020D&MI_02
+
+[MyDevice_WinUSB.NTamd64]
+%DESCRIPTION% =USB_Install, USB\VID_04d8&PID_0053,USB\VID_04d8&PID_0052,USB\VID_04d8&PID_020A,USB\VID_04d8&PID_020B,USB\VID_04d8&PID_020F,USB\VID_04d8&PID_005F&MI_01,USB\VID_04d8&PID_020C&MI_01,USB\VID_04d8&PID_020D&MI_02
+
+
+
+;=========================================================================================
+;ClassInstall32 and ClassInstall_AddReg sections used to make new device manager category.
+;=========================================================================================
+[ClassInstall32]
+AddReg=ClassInstall_AddReg
+
+[ClassInstall_AddReg]
+HKR,,,,%DEVICEMANAGERCATEGORY%
+HKR,,Icon,,"-20"
+
+
+; =================== Installation ===================
+
+[USB_Install]
+Include=winusb.inf
+Needs=WINUSB.NT
+
+[USB_Install.Services]
+Include=winusb.inf
+AddService=WinUSB,0x00000002,WinUSB_ServiceInstall
+
+[WinUSB_ServiceInstall]
+DisplayName     = %WinUSB_SvcDesc%
+ServiceType     = 1
+StartType       = 3
+ErrorControl    = 1
+ServiceBinary   = %12%\WinUSB.sys
+
+[USB_Install.Wdf]
+KmdfService=WINUSB, WinUsb_Install
+
+[WinUSB_Install]
+KmdfLibraryVersion=1.11
+
+[USB_Install.HW]
+AddReg=Dev_AddReg
+
+;------------------------------------------------------------------------------
+;When editing the GUID (the big hex number with dashes inside the squiggly 
+;braces), make sure to write the intended PC application to use the same GUID.
+;Otherwise the application won't be able to find the USB device properly.
+;The GUID is intended to be a "Globablly Unique Identifier".  When making a new
+;product, the VID, PID, and GUID should be updated, to avoid potential conflicts
+;with any existing products.
+;------------------------------------------------------------------------------
+[Dev_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{58D07210-27C1-11DD-BD0B-0800200C9A66}"
+
+[USB_Install.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller01011.dll,WdfCoInstaller","WinUSBCoInstaller2.dll"
+
+[CoInstallers_CopyFiles]
+WinUSBCoInstaller2.dll
+WdfCoInstaller01011.dll
+
+[DestinationDirs]
+CoInstallers_CopyFiles=11
+
+; ================= Source Media Section =====================
+
+[SourceDisksNames]
+1 = %DISK_NAME%,,,\i386
+2 = %DISK_NAME%,,,\amd64
+
+[SourceDisksFiles.x86]
+WinUSBCoInstaller2.dll=1
+WdfCoInstaller01011.dll=1
+
+[SourceDisksFiles.amd64]
+WinUSBCoInstaller2.dll=2
+WdfCoInstaller01011.dll=2
+
+; =================== Strings ===================
+
+[Strings]
+MFGNAME="Microchip Technology, Inc."
+DESCRIPTION="WinUSB Device"
+WinUSB_SvcDesc="WinUSB Device"
+DISK_NAME="WinUSB Device Install Disk"
+DEVICEMANAGERCATEGORY="Custom USB Devices"
+
